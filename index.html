@@ -5,8 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Fruits Burst</title>
     <link rel="icon" href="Images/logo.png" type="image/png">
-    <!-- Bootstrap 5 css link -->
-    <link rel="stylesheet" href="src/bootstrap.min.css">
     <!-- Fontawesome css link -->
     <link rel="stylesheet" href="src/all.min.css">
     <!-- Tailwind and Daisy UI link -->
@@ -36,6 +34,29 @@
             font-family: 'Lato', sans-serif;
         }
 
+        #header ul li a:hover{
+            background: none;
+            color: #fff;
+        }
+
+        #header ul li a:focus{
+            background: none;
+            color: #fff;
+        }
+
+        .dropdown-left > ul li a:hover{
+            color: #F85559;
+        }
+
+
+        .btn-ghost:hover{
+            background: none;
+        }
+
+        .btn-ghost:focus{
+            background: none;
+        }
+
         .fa-bars-staggered{
             color: #333;
             font-size: 25px;
@@ -43,7 +64,7 @@
         .light-red{
             color: #F85559;
         }
-
+        
         .navbar-toggler:focus {
             text-decoration: none;
             outline: 0;
@@ -98,57 +119,88 @@
 </head>
 <body class="font-lato">
 
-    <!-- Header Section started from here -->
-    <header class="px-2 bg-light-red lg:rounded-full mx-auto lg:my-3 lg:container">
-        <nav class="navbar navbar-expand-lg">
-            <div class="container-fluid">
-                <div>
-                    <a class="navbar-brand flex justify-center items-center h-auto" href="#">
-                        <img src="Images/logo.png" alt="">
-                        <span class="text-white text-3xl ms-2">Food Burst</span>
-                    </a>
-                </div>
+        <!-- Header section started from here -->
+        <section class="header px-5 bg-light-red rounded-0 lg:rounded-full my-0 lg:my-2" id="header">
+            <div class="container mx-auto">
+                <div class="navbar  px-6 text-white rounded-full hidden lg:flex">
+                    <div class="navbar-start">
+                        <div class="dropdown mt-12">
+                            <label tabindex="0" class="btn btn-ghost lg:hidden">
+                                <i class="fa-solid fa-bars-staggered"></i>
+                            </label>
+                            <ul tabindex="0" class="menu menu-sm dropdown-content -[1] p-2 shadow bg-base-100 rounded-none w-96">
+                                <li><a href="#">Home</a></li>
+                                <li><a href="#">About Us</a></li>
+                                <li><a href="#">Shop</a></li>
+                                <li><a href="#">All Fruits</a></li>
+                            </ul>
+                        </div>
 
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                    <i class="fa-solid fa-bars-staggered focus:outline-0"></i>
-                </button>
+                        <ul class="menu menu-horizontal text-lg px-1">
+                            <li><a href="#">Home</a></li>
+                            <li><a href="#">About Us</a></li>
+                            <li><a href="#">Shop</a></li>
+                            <li><a href="#">All Fruits</a></li>
+                        </ul>
+                    </div>
+                    <div class="navbar-center hidden lg:flex">
+                        <a class="navbar-brand flex justify-center items-center h-auto" href="#">
+                            <img src="Images/logo.png" alt="">
+                            <span class="text-white text-3xl ms-2 mb-4 mt-3">Food Burst</span>
+                        </a>
+                    </div>
 
-                <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                    <ul class="navbar-nav lg:mx-auto mb-2 mb-lg-0">
-                        <li class="nav-item">
-                            <a class="nav-link active text-white text-lg" aria-current="page" href="#">Home</a>
-                        </li>
-
-                        <li class="nav-item">
-                            <a class="nav-link text-white text-lg" href="#">About Us</a>
-                        </li>
-
-                        <li class="nav-item">
-                            <a class="nav-link text-white text-lg" href="#">Shop</a>
-                        </li>
-
-                        <li class="nav-item">
-                            <a class="nav-link text-white text-lg" href="#">All Fruits</a>
-                        </li>
-                    </ul>
-
-
-                        <div class="flex">
-                            <div class="relative w-full">
-                                <input type="search" class="w-full lg:w-80 block py-2.5 px-4 z-20 text-sm  bg-gray-50 lg:rounded-full text-gray-700 dark:placeholder-gray-600 dark:text-white focus:outline-0" placeholder="Search here">
-                                <button type="submit" class="absolute top-0 right-0 h-full p-2.5 text-sm font-medium text-black rounded-r-lg">
-                                    <i class="fa-solid fa-magnifying-glass"></i>
-                                    <span class="sr-only">Search</span>
+                    <div class="navbar-end">
+                        <!-- <div class="form-control">
+                            <div class="input-group">
+                                <input
+                                    type="text"
+                                    placeholder="Search…"class="input bg-white"/>
+                                <button class="btn bg-white">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/></svg>
                                 </button>
                             </div>
+                        </div> -->
+                        <form>
+                            <div class="relative w-full">
+                                <input type="search" class="block px-4 py-3.5 w-72 z-20 text-sm text-gray-800 rounded-full dark:placeholder-gray-400 focus:outline-0" placeholder="Search here">
+                                <button type="submit" class="absolute top-0 right-2 h-full text-lg text-gray-900 font-bold">
+                                    <svg class="w-4 h-4" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 20">
+                                         <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m19 19-4-4m0-7A7 7 0 1 1 1 8a7 7 0 0 1 14 0Z"/>
+                                    </svg>
+                                    <span class="sr-only">Search</span>
+                                </button>
+                        
+                            </div>
+                        </form>
+                    </div>
+                </div>
+
+                <div class="navbar py-4 px-6 text-white rounded-full flex lg:hidden">
+                    <div class="flex-1">
+                        <a class="navbar-brand flex justify-center items-center h-auto" href="#">
+                            <img src="Images/logo.png" alt="">
+                            <span class="text-white text-3xl ms-2 mb-4 mt-3">Food Burst</span>
+                        </a>
+                    </div>
+
+                    <div class="flex-none">
+                        <div class="dropdown dropdown-left">
+                            <label tabindex="0"><button class="btn btn-square btn-ghost">
+                                <i class="fa-solid fa-bars-staggered"></i>
+                            </label>
+                            <ul tabindex="0" class="dropdown-content text-black z-[1] menu px-4 py-4 shadow bg-base-200 rounded-sm w-56 mt-16">
+                                <li><a href="#">Home</a></li>
+                                <li><a href="#">About Us</a></li>
+                                <li><a href="#">Shop</a></li>
+                                <li><a href="#">All Fruits</a></li>
+                            </ul>
                         </div>
+                    </div>
                 </div>
             </div>
-        </nav>
-    </header>
-                    <!-- Here I've used Bootstrap and tailwind together -->
-
-    <!-- Header Section ended here -->
+        </section>    
+        <!-- Header Section ended here -->
 
 
 
@@ -164,7 +216,7 @@
         <!-- Deal Section started from here -->
         <section class="px-2 mx-auto lg:my-3 lg:container">
             <div class="flex flex-col gap-20 lg:flex-row justify-between items-center mb-10">
-                <div class="flex-1">
+                <div class="flex-1 text-center lg:text-start mt-2">
                     <h3 class="text-3xl text-gray-800 font-extrabold mb-3">Deal of the day</h3>
                     <p class="text-lg text-slate-600">Contrary to popular belief, is not simply random text. It has roots in a piece of classical <br> Latin literature from 45 BC, making it over 2000 years ol</p>
                 </div>
@@ -193,7 +245,7 @@
             </div>
 
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-7 p-3">
-                <div class="border-1 border-gray-400 w-full py-6 mx-auto text-center">
+                <div class="border-2 border-gray-400 w-full py-6 mx-auto text-center">
                     <img src="Images/apple.png" class="mx-auto" alt="">
                     <h3 class="mt-4 mb-4 text-2xl text-gray-800">12.90$ - 18.85$</h3>
                     <span class="text-sm text-gray-500">Apple</span>
@@ -228,7 +280,7 @@
 
                 </div>
 
-                <div class="border-1 border-gray-400 w-full py-6 mx-auto text-center">
+                <div class="border-2 border-gray-400 w-full py-6 mx-auto text-center">
                     <img src="Images/orange.png" class="mx-auto" alt="">
                     <h3 class="mt-4 mb-4 text-2xl text-gray-800">12.90$ - 18.85$</h3>
                     <span class="text-sm text-gray-500">Orange</span>
@@ -264,7 +316,7 @@
                     
                 </div>
 
-                <div class="border-1 border-gray-400 w-full py-6 mx-auto text-center">
+                <div class="border-2 border-gray-400 w-full py-6 mx-auto text-center">
                     <img src="Images/dragon.png" class="mx-auto" alt="">
                     <h3 class="mt-4 mb-4 text-2xl text-gray-800">12.90$ - 18.85$</h3>
                     <span class="text-sm text-gray-500">Red Dragon</span>
@@ -299,7 +351,7 @@
                     
                 </div>
 
-                <div class="border-1 border-gray-400 w-full py-6 mx-auto text-center">
+                <div class="border-2 border-gray-400 w-full py-6 mx-auto text-center">
                     <img src="Images/banana.png" class="mx-auto" alt="">
                     <h3 class="mt-4 mb-4 text-2xl text-gray-800">12.90$ - 18.85$</h3>
                     <span class="text-sm text-gray-500">Banana</span>
@@ -334,7 +386,7 @@
                     
                 </div>
 
-                <div class="border-1 border-gray-400 w-full py-6 mx-auto text-center">
+                <div class="border-2 border-gray-400 w-full py-6 mx-auto text-center">
                     <img src="Images/strawberry.png" class="mx-auto" alt="">
                     <h3 class="mt-4 mb-4 text-2xl text-gray-800">12.90$ - 18.85$</h3>
                     <span class="text-sm text-gray-500">Strawberry</span>
@@ -369,7 +421,7 @@
 
                 </div>
 
-                <div class="border-1 border-gray-400 w-full py-6 mx-auto text-center">
+                <div class="border-2 border-gray-400 w-full py-6 mx-auto text-center">
                     <img src="Images/multa.png" class="mx-auto" alt="">
                     <h3 class="mt-4 mb-4 text-2xl text-gray-800">12.90$ - 18.85$</h3>
                     <span class="text-sm text-gray-500">Multa</span>
@@ -404,7 +456,7 @@
                     
                 </div>
 
-                <div class="border-1 border-gray-400 w-full py-6 mx-auto text-center">
+                <div class="border-2 border-gray-400 w-full py-6 mx-auto text-center">
                     <img src="Images/mango.png" class="mx-auto" alt="">
                     <h3 class="mt-4 mb-4 text-2xl text-gray-800">12.90$ - 18.85$</h3>
                     <span class="text-sm text-gray-500">Mango</span>
@@ -439,7 +491,7 @@
                     
                 </div>
 
-                <div class="border-1 border-gray-400  w-full py-6 mx-auto text-center">
+                <div class="border-2 border-gray-400  w-full py-6 mx-auto text-center">
                     <img src="Images/grape.png" class="mx-auto" alt="">
                     <h3 class="mt-4 mb-4 text-2xl text-gray-800">12.90$ - 18.85$</h3>
                     <span class="text-sm text-gray-500">Grape</span>
@@ -709,6 +761,5 @@
 
     <!-- Footer section ended here -->
     
-    <script src="src/cdn.jsdelivr.net_npm_bootstrap@5.3.0_dist_js_bootstrap.bundle.min.js"></script>
 </body>
 </html>
